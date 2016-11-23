@@ -1,4 +1,4 @@
-package com.expensivebelly.dagger2retaingraph;
+package com.expensivebelly.dagger2retaingraph.activity;
 
 class NullRetainGraphView implements RetainGraphView {
     @Override

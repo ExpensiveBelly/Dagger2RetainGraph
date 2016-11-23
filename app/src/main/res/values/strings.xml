@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Dagger2RetainGraph</string>
+    <string name="activity">Activity</string>
+    <string name="master_detail">Master Detail</string>
+    <string name="master">Master</string>
+    <string name="detail">Detail</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.expensivebelly.dagger2retaingraph;
+package com.expensivebelly.dagger2retaingraph.activity;
 
 interface RetainGraphView {
 

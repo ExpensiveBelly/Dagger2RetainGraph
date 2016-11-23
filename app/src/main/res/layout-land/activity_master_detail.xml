@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.flexbox.FlexboxLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:alignItems="center"
+    app:flexDirection="row"
+    app:flexWrap="nowrap"
+    app:justifyContent="space_around">
+
+    <fragment
+        android:id="@+id/master"
+        android:name="com.expensivebelly.dagger2retaingraph.fragment.MasterFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <fragment
+        android:id="@+id/detail"
+        android:name="com.expensivebelly.dagger2retaingraph.fragment.DetailFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</com.google.android.flexbox.FlexboxLayout>

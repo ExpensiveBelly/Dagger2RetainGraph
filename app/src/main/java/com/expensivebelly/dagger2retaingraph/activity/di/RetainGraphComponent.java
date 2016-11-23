@@ -1,6 +1,6 @@
-package com.expensivebelly.dagger2retaingraph.di;
+package com.expensivebelly.dagger2retaingraph.activity.di;
 
-import com.expensivebelly.dagger2retaingraph.RetainGraphActivity;
+import com.expensivebelly.dagger2retaingraph.activity.RetainGraphActivity;
 
 import dagger.Component;
 

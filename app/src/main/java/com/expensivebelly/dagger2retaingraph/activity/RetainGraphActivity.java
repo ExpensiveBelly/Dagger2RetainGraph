@@ -1,10 +1,13 @@
-package com.expensivebelly.dagger2retaingraph;
+package com.expensivebelly.dagger2retaingraph.activity;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
-import com.expensivebelly.dagger2retaingraph.di.RetainGraphComponent;
+import com.expensivebelly.dagger2retaingraph.R;
+import com.expensivebelly.dagger2retaingraph.activity.di.RetainGraphComponent;
 
 import javax.inject.Inject;
 
@@ -19,6 +22,10 @@ public class RetainGraphActivity extends AppCompatActivity implements RetainGrap
 
     private RetainGraphComponent component;
     private TextView messageView;
+
+    public static Intent startIntent(Activity activity) {
+        return new Intent(activity, RetainGraphActivity.class);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

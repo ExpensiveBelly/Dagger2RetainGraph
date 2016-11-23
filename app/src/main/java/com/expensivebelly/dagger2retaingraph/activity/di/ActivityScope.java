@@ -1,4 +1,4 @@
-package com.expensivebelly.dagger2retaingraph.di;
+package com.expensivebelly.dagger2retaingraph.activity.di;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
