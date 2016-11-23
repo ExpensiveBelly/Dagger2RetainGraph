@@ -1,6 +1,6 @@
 package com.expensivebelly.dagger2retaingraph;
 
-class NullDaggerRetainGraphView implements DaggerRetainGraphView {
+class NullRetainGraphView implements RetainGraphView {
     @Override
     public void display(String message) {
 

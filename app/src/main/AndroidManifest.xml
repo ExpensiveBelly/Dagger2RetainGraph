@@ -3,13 +3,13 @@
           package="com.expensivebelly.dagger2retaingraph">
 
     <application
-        android:name=".DaggerRetainGraphApplication"
+        android:name=".RetainGraphApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DaggerRetainGraphActivity">
+        <activity android:name=".RetainGraphActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

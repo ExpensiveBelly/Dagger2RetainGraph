@@ -1,6 +1,6 @@
 package com.expensivebelly.dagger2retaingraph.di;
 
-import com.expensivebelly.dagger2retaingraph.DaggerRetainGraphActivity;
+import com.expensivebelly.dagger2retaingraph.RetainGraphActivity;
 
 import dagger.Component;
 
@@ -8,7 +8,7 @@ import dagger.Component;
 @Component(modules = RetainModule.class)
 public interface RetainGraphComponent {
 
-    void inject(DaggerRetainGraphActivity daggerRetainGraphActivity);
+    void inject(RetainGraphActivity retainGraphActivity);
 
     final class Initializer {
         private Initializer() {

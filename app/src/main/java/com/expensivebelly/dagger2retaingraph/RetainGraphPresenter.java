@@ -10,13 +10,13 @@ import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 
-public class DaggerRetainGraphPresenter {
+public class RetainGraphPresenter {
 
-    private DaggerRetainGraphView view;
+    private RetainGraphView view;
     private Disposable disposable;
     private Observable<String> observable;
 
-    void attachView(DaggerRetainGraphView view) {
+    void attachView(RetainGraphView view) {
         this.view = view;
         startCounting();
     }
@@ -43,7 +43,7 @@ public class DaggerRetainGraphPresenter {
     }
 
     void detachView() {
-        view = new NullDaggerRetainGraphView();
+        view = new NullRetainGraphView();
         disposable.dispose();
     }
 }

@@ -1,6 +1,6 @@
 package com.expensivebelly.dagger2retaingraph;
 
-interface DaggerRetainGraphView {
+interface RetainGraphView {
 
     void display(String message);
 }

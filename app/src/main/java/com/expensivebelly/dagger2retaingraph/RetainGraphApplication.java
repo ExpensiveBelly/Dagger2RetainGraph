@@ -4,7 +4,7 @@ import android.app.Application;
 
 import com.squareup.leakcanary.LeakCanary;
 
-public class DaggerRetainGraphApplication extends Application {
+public class RetainGraphApplication extends Application {
 
     @Override
     public void onCreate() {

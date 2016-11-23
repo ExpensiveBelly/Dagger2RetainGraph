@@ -9,7 +9,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.expensivebelly.dagger2retaingraph.DaggerRetainGraphActivity">
+    tools:context="com.expensivebelly.dagger2retaingraph.RetainGraphActivity">
 
     <TextView
         android:id="@+id/text_message"

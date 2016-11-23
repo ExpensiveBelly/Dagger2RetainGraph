@@ -12,10 +12,10 @@ import javax.inject.Inject;
  * Dependency graph is retained through configuration changes in the Activity
  */
 
-public class DaggerRetainGraphActivity extends AppCompatActivity implements DaggerRetainGraphView {
+public class RetainGraphActivity extends AppCompatActivity implements RetainGraphView {
 
     @Inject
-    DaggerRetainGraphPresenter presenter;
+    RetainGraphPresenter presenter;
 
     private RetainGraphComponent component;
     private TextView messageView;
@@ -23,7 +23,7 @@ public class DaggerRetainGraphActivity extends AppCompatActivity implements Dagg
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_retain_graph);
         messageView = (TextView) findViewById(R.id.text_message);
 
         component = component();
