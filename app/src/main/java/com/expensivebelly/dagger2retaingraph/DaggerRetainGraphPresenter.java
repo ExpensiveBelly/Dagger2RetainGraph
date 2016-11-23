@@ -18,10 +18,10 @@ public class DaggerRetainGraphPresenter {
 
     void attachView(DaggerRetainGraphView view) {
         this.view = view;
-        startLengthyOperation();
+        startCounting();
     }
 
-    private void startLengthyOperation() {
+    private void startCounting() {
         disposable = observable().subscribe(new Consumer<String>() {
             @Override
             public void accept(String message) throws Exception {
