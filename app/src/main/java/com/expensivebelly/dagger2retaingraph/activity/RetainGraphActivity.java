@@ -33,16 +33,17 @@ public class RetainGraphActivity extends AppCompatActivity implements RetainGrap
         setContentView(R.layout.activity_retain_graph);
         messageView = (TextView) findViewById(R.id.text_message);
 
-        component = component();
-        component.inject(this);
+        component().inject(this);
 
         presenter.attachView(this);
     }
 
     private RetainGraphComponent component() {
-        RetainGraphComponent component = (RetainGraphComponent) getLastCustomNonConfigurationInstance();
         if (component == null) {
-            component = RetainGraphComponent.Initializer.init();
+            component = (RetainGraphComponent) getLastCustomNonConfigurationInstance();
+            if (component == null) {
+                component = RetainGraphComponent.Initializer.init();
+            }
         }
         return component;
     }
@@ -55,7 +56,7 @@ public class RetainGraphActivity extends AppCompatActivity implements RetainGrap
 
     @Override
     public Object onRetainCustomNonConfigurationInstance() {
-        return component;
+        return component();
     }
 
     @Override

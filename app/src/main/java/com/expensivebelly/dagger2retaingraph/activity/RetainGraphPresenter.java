@@ -32,7 +32,7 @@ public class RetainGraphPresenter {
 
     private Observable<String> observable() {
         if (observable == null) {
-            observable = Observable.interval(2, TimeUnit.SECONDS).flatMap(new Function<Long, ObservableSource<String>>() {
+            observable = Observable.interval(1, TimeUnit.SECONDS).flatMap(new Function<Long, ObservableSource<String>>() {
                 @Override
                 public ObservableSource<String> apply(Long aLong) throws Exception {
                     return Observable.just(String.valueOf(aLong));
