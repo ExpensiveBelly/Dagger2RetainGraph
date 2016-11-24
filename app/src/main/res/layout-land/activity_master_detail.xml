@@ -18,7 +18,7 @@
 
     <fragment
         android:id="@+id/detail"
-        android:name="com.expensivebelly.dagger2retaingraph.fragment.DetailFragment"
+        android:name="com.expensivebelly.dagger2retaingraph.fragment.detail.DetailFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 

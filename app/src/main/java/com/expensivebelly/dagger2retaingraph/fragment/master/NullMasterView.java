@@ -5,4 +5,9 @@ class NullMasterView implements MasterView {
     public void init() {
 
     }
+
+    @Override
+    public void timeRemaining(Long seconds) {
+
+    }
 }

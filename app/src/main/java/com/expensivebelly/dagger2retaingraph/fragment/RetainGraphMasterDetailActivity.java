@@ -7,7 +7,8 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
 import com.expensivebelly.dagger2retaingraph.R;
-import com.expensivebelly.dagger2retaingraph.fragment.di.MasterComponent;
+import com.expensivebelly.dagger2retaingraph.fragment.detail.di.DetailComponent;
+import com.expensivebelly.dagger2retaingraph.fragment.master.di.MasterComponent;
 
 public class RetainGraphMasterDetailActivity extends AppCompatActivity implements ComponentComposite {
 
@@ -36,6 +37,11 @@ public class RetainGraphMasterDetailActivity extends AppCompatActivity implement
             }
         }
         return componentComposite;
+    }
+
+    @Override
+    public DetailComponent detailComponent() {
+        return componentComposite().detailComponent();
     }
 
     @Override

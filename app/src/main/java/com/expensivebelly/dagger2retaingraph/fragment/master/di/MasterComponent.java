@@ -1,4 +1,4 @@
-package com.expensivebelly.dagger2retaingraph.fragment.di;
+package com.expensivebelly.dagger2retaingraph.fragment.master.di;
 
 import com.expensivebelly.dagger2retaingraph.activity.di.ActivityScope;
 import com.expensivebelly.dagger2retaingraph.fragment.master.MasterFragment;

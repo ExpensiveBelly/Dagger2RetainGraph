@@ -1,4 +1,4 @@
-package com.expensivebelly.dagger2retaingraph.fragment.master;
+package com.expensivebelly.dagger2retaingraph.fragment.detail;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -7,7 +7,6 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.expensivebelly.dagger2retaingraph.R;
@@ -15,14 +14,13 @@ import com.expensivebelly.dagger2retaingraph.fragment.ComponentComposite;
 
 import javax.inject.Inject;
 
-public class MasterFragment extends Fragment implements MasterView {
+public class DetailFragment extends Fragment implements DetailView {
 
     @Inject
-    MasterPresenter presenter;
+    DetailPresenter presenter;
 
     private ComponentComposite componentComposite;
     private TextView textView;
-    private ProgressBar progressBar;
 
     @Override
     public void onAttach(Context context) {
@@ -33,33 +31,22 @@ public class MasterFragment extends Fragment implements MasterView {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_master, container, false);
+        return inflater.inflate(R.layout.fragment_detail, container, false);
     }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         textView = (TextView) view.findViewById(R.id.text_centered);
-        progressBar = (ProgressBar) view.findViewById(R.id.progress_bar);
 
-        componentComposite.masterComponent().inject(this);
+        componentComposite.detailComponent().inject(this);
 
         presenter.attachView(this);
     }
 
     @Override
-    public void timeRemaining(Long seconds) {
-        if (seconds < 0) { // FIXME: Remove this hack. Use Rx properly
-            init();
-            progressBar.setVisibility(View.INVISIBLE);
-        } else {
-            textView.setText(String.valueOf(seconds));
-        }
-    }
-
-    @Override
     public void init() {
-        textView.setText(getString(R.string.master));
+        textView.setText(getString(R.string.detail));
     }
 
     @Override
