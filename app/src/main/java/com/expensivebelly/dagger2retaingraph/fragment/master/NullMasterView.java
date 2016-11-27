@@ -7,7 +7,7 @@ class NullMasterView implements MasterView {
     }
 
     @Override
-    public void timeRemaining(Long seconds) {
+    public void hideProgressBar() {
 
     }
 }

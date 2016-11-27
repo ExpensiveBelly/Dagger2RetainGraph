@@ -1,15 +1,15 @@
 package com.expensivebelly.dagger2retaingraph.fragment.master;
 
-import io.reactivex.Observable;
+import io.reactivex.Single;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
 
 public class MasterPresenter {
-    private final Observable<Long> timeWaster;
+    private final Single<Long> timeWaster;
     private MasterView view;
     private Disposable disposable;
 
-    public MasterPresenter(Observable<Long> timeWaster) {
+    public MasterPresenter(Single<Long> timeWaster) {
         this.timeWaster = timeWaster;
     }
 
@@ -23,16 +23,13 @@ public class MasterPresenter {
         disposable = timeWaster.subscribe(new Consumer<Long>() {
             @Override
             public void accept(Long aLong) throws Exception {
-                view.timeRemaining(aLong);
+                view.hideProgressBar();
             }
-
-
         });
     }
 
     void detachView() {
         view = new NullMasterView();
         disposable.dispose();
-
     }
 }

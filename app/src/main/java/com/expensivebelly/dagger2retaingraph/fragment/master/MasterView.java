@@ -4,5 +4,5 @@ interface MasterView {
 
     void init();
 
-    void timeRemaining(Long seconds);
+    void hideProgressBar();
 }

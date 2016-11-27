@@ -48,13 +48,8 @@ public class MasterFragment extends Fragment implements MasterView {
     }
 
     @Override
-    public void timeRemaining(Long seconds) {
-        if (seconds < 0) { // FIXME: Remove this hack. Use Rx properly
-            init();
-            progressBar.setVisibility(View.INVISIBLE);
-        } else {
-            textView.setText(String.valueOf(seconds));
-        }
+    public void hideProgressBar() {
+        progressBar.setVisibility(View.INVISIBLE);
     }
 
     @Override
