@@ -1,8 +1,9 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.noveogroup.android.check'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "24.0.2"
+    buildToolsVersion '25.0.1'
     defaultConfig {
         applicationId "com.expensivebelly.dagger2retaingraph"
         minSdkVersion 21
@@ -17,6 +18,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+}
+
+check {
+    pmd { skip true }
 }
 
 dependencies {

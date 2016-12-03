@@ -48,10 +48,4 @@ public class DetailFragment extends Fragment implements DetailView {
     public void init() {
         textView.setText(getString(R.string.detail));
     }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        presenter.detachView();
-    }
 }
