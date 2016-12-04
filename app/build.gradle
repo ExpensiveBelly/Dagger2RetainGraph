@@ -21,7 +21,7 @@ android {
 }
 
 check {
-    pmd { skip true }
+    pmd { config hard() }
 }
 
 dependencies {
