@@ -17,12 +17,12 @@ class MasterModule {
 
     @Provides
     @ActivityScope
-    MasterPresenter provideMasterPresenter(Single<Long> timeWaster) {
+    static MasterPresenter provideMasterPresenter(Single<Long> timeWaster) {
         return new MasterPresenter(timeWaster);
     }
 
     @Provides
-    Single<Long> provideTimeWaster() {
+    static Single<Long> provideTimeWaster() {
         long period = 5;
         return Observable.interval(period, TimeUnit.SECONDS)
                 .subscribeOn(Schedulers.newThread())

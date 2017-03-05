@@ -1,6 +1,12 @@
 package com.expensivebelly.dagger2retaingraph.fragment.detail;
 
-public class DetailPresenter {
+import javax.inject.Inject;
+
+class DetailPresenter {
+
+    @Inject
+    DetailPresenter() {
+    }
 
     void attachView(DetailView view) {
         view.init();

@@ -17,12 +17,12 @@ class RetainModule {
 
     @Provides
     @ActivityScope
-    RetainGraphPresenter provideDaggerRetainGraphPresenter(Observable<String> timer) {
+    static RetainGraphPresenter provideDaggerRetainGraphPresenter(Observable<String> timer) {
         return new RetainGraphPresenter(timer);
     }
 
     @Provides
-    Observable<String> provideObservable() {
+    static Observable<String> provideObservable() {
         return Observable.interval(1, TimeUnit.SECONDS).flatMap(new Function<Long, ObservableSource<String>>() {
             @Override
             public ObservableSource<String> apply(Long aLong) throws Exception {

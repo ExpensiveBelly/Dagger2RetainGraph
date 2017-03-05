@@ -6,7 +6,7 @@ import com.expensivebelly.dagger2retaingraph.fragment.detail.DetailFragment;
 import dagger.Component;
 
 @ActivityScope
-@Component(modules = DetailModule.class)
+@Component
 public interface DetailComponent {
 
     void inject(DetailFragment detailFragment);
