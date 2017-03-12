@@ -17,6 +17,7 @@
         </activity>
         <activity android:name=".activity.RetainGraphActivity"/>
         <activity android:name=".fragment.RetainGraphMasterDetailActivity"/>
+        <activity android:name=".loaders.LoadersActivity"/>
     </application>
 
 </manifest>

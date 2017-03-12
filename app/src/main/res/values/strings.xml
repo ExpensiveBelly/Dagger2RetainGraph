@@ -4,4 +4,6 @@
     <string name="master_detail">Master Detail</string>
     <string name="master">Master</string>
     <string name="detail">Detail</string>
+    <string name="loaders">Loaders</string>
+    <string name="loading">Loading</string>
 </resources>

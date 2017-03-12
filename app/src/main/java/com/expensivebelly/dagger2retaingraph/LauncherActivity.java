@@ -7,6 +7,7 @@ import android.view.View;
 
 import com.expensivebelly.dagger2retaingraph.activity.RetainGraphActivity;
 import com.expensivebelly.dagger2retaingraph.fragment.RetainGraphMasterDetailActivity;
+import com.expensivebelly.dagger2retaingraph.loaders.LoadersActivity;
 
 public class LauncherActivity extends AppCompatActivity {
 
@@ -26,6 +27,13 @@ public class LauncherActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(RetainGraphMasterDetailActivity.startIntent(LauncherActivity.this));
+            }
+        });
+
+        findViewById(R.id.button_loader).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(LoadersActivity.startIntent(LauncherActivity.this));
             }
         });
     }
