@@ -23,4 +23,4 @@ it's the same instance of the Object that originated the request, therefore, by 
 
 It works in a similar fashion as Loaders to retain state through configuration changes.
 
-
+UPDATE: I would advise to use [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel) from Google Architecture Components instead. 
