@@ -12,7 +12,7 @@ import javax.inject.Inject
 /**
  * Dependency graph is retained through configuration changes in the Activity
  */
-class MainActivity : RetainGraphActivity<RetainGraphComponent>(), MainView {
+class MainActivity : RetainGraphActivity<RetainGraphComponent>(), IMainView {
 
     @Inject
     lateinit var presenter: MainPresenter
