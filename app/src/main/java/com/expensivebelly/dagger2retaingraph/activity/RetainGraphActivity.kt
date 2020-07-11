@@ -40,7 +40,7 @@ class RetainGraphActivity : AppCompatActivity(), RetainGraphView {
     }
 
     override fun onStop() {
-        if (!isChangingConfigurations) presenter.detach()
+        presenter.detach()
         super.onStop()
     }
 

@@ -4,10 +4,7 @@ import com.expensivebelly.dagger2retaingraph.activity.di.ActivityScope
 import com.expensivebelly.dagger2retaingraph.fragment.master.MasterPresenter
 import dagger.Module
 import dagger.Provides
-import io.reactivex.Observable
-import io.reactivex.Single
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.schedulers.Schedulers
+import io.reactivex.rxjava3.core.Single
 import java.util.concurrent.TimeUnit
 
 @Module
@@ -20,13 +17,11 @@ class MasterModule {
     }
 
     @Provides
-    @ActivityScope
     fun provideTimeWaster(): Single<Long> {
         val period: Long = 5
-        return Observable.interval(period, TimeUnit.SECONDS)
-                .subscribeOn(Schedulers.newThread())
-                .observeOn(AndroidSchedulers.mainThread())
-                .cache()
-                .first(period)
+        return Single.just(period)
+                .toObservable().replay(1).refCount(1, TimeUnit.SECONDS)
+                .delay(period, TimeUnit.SECONDS)
+                .firstOrError()
     }
 }

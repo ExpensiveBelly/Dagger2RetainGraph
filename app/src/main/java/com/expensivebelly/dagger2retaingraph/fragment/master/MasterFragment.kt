@@ -43,7 +43,7 @@ class MasterFragment : Fragment(), MasterView {
     }
 
     override fun onStop() {
-        if (!requireActivity().isChangingConfigurations) presenter.detach()
+        presenter.detach()
         super.onStop()
     }
 
