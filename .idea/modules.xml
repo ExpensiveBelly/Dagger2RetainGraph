@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Dagger2RetainGraph.iml" filepath="$PROJECT_DIR$/Dagger2RetainGraph.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Dagger2RetainGraph-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Dagger2RetainGraph-app.iml" group="Dagger2RetainGraph/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/GitHub-Dagger2RetainGraph.iml" filepath="$PROJECT_DIR$/.idea/modules/GitHub-Dagger2RetainGraph.iml" group="Dagger2RetainGraph" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
