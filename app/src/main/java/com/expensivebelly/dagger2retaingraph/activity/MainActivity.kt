@@ -1,28 +1,21 @@
 package com.expensivebelly.dagger2retaingraph.activity
 
-import android.app.Activity
-import android.content.Intent
+import android.content.Context
 import android.os.Bundle
 import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
 import com.expensivebelly.dagger2retaingraph.R
 import com.expensivebelly.dagger2retaingraph.activity.di.DaggerRetainGraphComponent
 import com.expensivebelly.dagger2retaingraph.activity.di.RetainGraphComponent
-import com.expensivebelly.dagger2retaingraph.activity.di.RetainModule
+import com.expensivebelly.dagger2retaingraph.core.RetainGraphActivity
 import javax.inject.Inject
 
 /**
  * Dependency graph is retained through configuration changes in the Activity
  */
-class RetainGraphActivity : AppCompatActivity(), RetainGraphView {
+class MainActivity : RetainGraphActivity<RetainGraphComponent>(), MainView {
 
     @Inject
-    lateinit var presenter: RetainGraphPresenter
-
-    private val component by lazy {
-        (lastCustomNonConfigurationInstance as RetainGraphComponent?)
-                ?: DaggerRetainGraphComponent.builder().build()
-    }
+    lateinit var presenter: MainPresenter
 
     private val messageView by lazy {
         findViewById<TextView>(R.id.text_message)
@@ -30,7 +23,7 @@ class RetainGraphActivity : AppCompatActivity(), RetainGraphView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_retain_graph)
+        setContentView(R.layout.activity_main)
         component.inject(this)
     }
 
@@ -50,7 +43,5 @@ class RetainGraphActivity : AppCompatActivity(), RetainGraphView {
         messageView.text = message
     }
 
-    companion object {
-        fun startIntent(activity: Activity) = Intent(activity, RetainGraphActivity::class.java)
-    }
+    override fun buildComponent(context: Context) = DaggerRetainGraphComponent.builder().build()
 }

@@ -6,11 +6,11 @@ import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.kotlin.plusAssign
 
-class RetainGraphPresenter(private val timer: Observable<String>) : IPresenter<RetainGraphView> {
+class MainPresenter(private val timer: Observable<String>) : IPresenter<MainView> {
 
     private val compositeDisposable = CompositeDisposable()
 
-    override fun attach(view: RetainGraphView) {
+    override fun attach(view: MainView) {
         compositeDisposable += timer
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe { message -> view.display(message) }

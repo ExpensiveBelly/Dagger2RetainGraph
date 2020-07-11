@@ -1,5 +1,5 @@
 package com.expensivebelly.dagger2retaingraph.activity
 
-interface RetainGraphView {
+interface MainView {
     fun display(message: String)
 }

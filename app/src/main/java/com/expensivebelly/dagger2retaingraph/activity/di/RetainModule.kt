@@ -1,6 +1,6 @@
 package com.expensivebelly.dagger2retaingraph.activity.di
 
-import com.expensivebelly.dagger2retaingraph.activity.RetainGraphPresenter
+import com.expensivebelly.dagger2retaingraph.activity.MainPresenter
 import dagger.Module
 import dagger.Provides
 import io.reactivex.rxjava3.core.Observable
@@ -11,8 +11,8 @@ class RetainModule {
 
     @Provides
     @ActivityScope
-    fun provideDaggerRetainGraphPresenter(timer: Observable<String>): RetainGraphPresenter {
-        return RetainGraphPresenter(timer)
+    fun provideDaggerRetainGraphPresenter(timer: Observable<String>): MainPresenter {
+        return MainPresenter(timer)
     }
 
     @Provides
