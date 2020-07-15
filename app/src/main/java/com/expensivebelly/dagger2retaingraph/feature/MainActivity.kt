@@ -36,9 +36,6 @@ class MainActivity : RetainGraphActivity<MainComponent>(), IMainView {
         presenter.detach()
         super.onStop()
     }
-
-    override fun onRetainCustomNonConfigurationInstance() = component
-
     override fun display(message: String) {
         messageView.text = message
     }
