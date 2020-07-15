@@ -1,4 +1,4 @@
-package com.expensivebelly.dagger2retaingraph.activity.di
+package com.expensivebelly.dagger2retaingraph.core.di
 
 import javax.inject.Scope
 

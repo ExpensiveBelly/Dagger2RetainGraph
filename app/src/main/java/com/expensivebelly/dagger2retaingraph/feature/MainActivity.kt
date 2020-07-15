@@ -1,18 +1,18 @@
-package com.expensivebelly.dagger2retaingraph.activity
+package com.expensivebelly.dagger2retaingraph.feature
 
 import android.content.Context
 import android.os.Bundle
 import android.widget.TextView
 import com.expensivebelly.dagger2retaingraph.R
-import com.expensivebelly.dagger2retaingraph.activity.di.DaggerRetainGraphComponent
-import com.expensivebelly.dagger2retaingraph.activity.di.RetainGraphComponent
 import com.expensivebelly.dagger2retaingraph.core.RetainGraphActivity
+import com.expensivebelly.dagger2retaingraph.feature.di.DaggerMainComponent
+import com.expensivebelly.dagger2retaingraph.feature.di.MainComponent
 import javax.inject.Inject
 
 /**
  * Dependency graph is retained through configuration changes in the Activity
  */
-class MainActivity : RetainGraphActivity<RetainGraphComponent>(), IMainView {
+class MainActivity : RetainGraphActivity<MainComponent>(), IMainView {
 
     @Inject
     lateinit var presenter: MainPresenter
@@ -43,5 +43,5 @@ class MainActivity : RetainGraphActivity<RetainGraphComponent>(), IMainView {
         messageView.text = message
     }
 
-    override fun buildComponent(context: Context) = DaggerRetainGraphComponent.builder().build()
+    override fun buildComponent(context: Context) = DaggerMainComponent.builder().build()
 }
