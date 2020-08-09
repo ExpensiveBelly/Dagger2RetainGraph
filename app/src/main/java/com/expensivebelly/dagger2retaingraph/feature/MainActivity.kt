@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.TextView
 import com.expensivebelly.dagger2retaingraph.R
 import com.expensivebelly.dagger2retaingraph.core.RetainGraphActivity
+import com.expensivebelly.dagger2retaingraph.core.behavior.PresenterBehavior
 import com.expensivebelly.dagger2retaingraph.feature.di.DaggerMainComponent
 import com.expensivebelly.dagger2retaingraph.feature.di.MainComponent
 import javax.inject.Inject
@@ -13,6 +14,10 @@ import javax.inject.Inject
  * Dependency graph is retained through configuration changes in the Activity
  */
 class MainActivity : RetainGraphActivity<MainComponent>(), IMainView {
+
+    init {
+        addBehavior(PresenterBehavior(this) { presenter })
+    }
 
     @Inject
     lateinit var presenter: MainPresenter
@@ -25,16 +30,6 @@ class MainActivity : RetainGraphActivity<MainComponent>(), IMainView {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         component.inject(this)
-    }
-
-    override fun onStart() {
-        super.onStart()
-        presenter.attach(this)
-    }
-
-    override fun onStop() {
-        presenter.detach()
-        super.onStop()
     }
 
     override fun display(message: String) {
