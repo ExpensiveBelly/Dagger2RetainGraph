@@ -5,7 +5,7 @@ import com.expensivebelly.dagger2retaingraph.feature.MainActivity
 import dagger.Component
 
 @ActivityScope
-@Component(modules = [MainModule::class])
+@Component
 interface MainComponent {
     fun inject(mainActivity: MainActivity)
 }

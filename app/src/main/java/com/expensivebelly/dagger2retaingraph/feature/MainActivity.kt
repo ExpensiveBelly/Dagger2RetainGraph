@@ -36,6 +36,7 @@ class MainActivity : RetainGraphActivity<MainComponent>(), IMainView {
         presenter.detach()
         super.onStop()
     }
+
     override fun display(message: String) {
         messageView.text = message
     }
